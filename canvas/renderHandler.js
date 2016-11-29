@@ -12,7 +12,14 @@ window.ucai = window.ucai || {};
         },
         removeHandler:function (handler) {
             var index = handlers.indexOf(handler)
+            if (index != -1) {
+                handlers.splice(index, 1);
+            }
+        },
+        runHandlers: function () {
+            for (var i = 0; i < handlers.length; i++) {
+                handlers[i]();
+            }
         }
     }
-
 })();

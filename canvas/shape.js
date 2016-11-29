@@ -50,10 +50,11 @@ window.ucai = window.ucai || {};
     p.render = function (context) {
         this.onUpdate();
         context.save();
-        context.transaction(this.x,this.y);
+        context.translate(this.x,this.y);
         context.rotate(this._rotation);
         context.fillStyle = this.color;
         this.onDraw(context);
+        context.restore();
     };
 
     p.onDraw = function (context) {

@@ -12,10 +12,6 @@ window.ucai = window.ucai || {};
 
     var p = Rectangle.prototype= new ucai.Shape();
 
-    p.onUpdate = function () {
-        this.rotation += 0.01;
-    };
-
     p.onDraw = function (context) {
         context.fillRect(0,0,this._width,this._height)
     };
